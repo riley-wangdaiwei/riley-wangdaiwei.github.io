@@ -98,8 +98,64 @@ header p {
   color: #000;
   padding: 0 2px;
   border-radius: 2px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
-.highlight-link:hover {
-  background-color: #ffffff; 
+
+.highlight-link:hover,
+.highlight-link:focus {
+  background-color: transparent;
   color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/*---project horizontal---*/
+.projects-horizontal {
+  display: flex;
+  gap: 40px; /* space between projects horizontally */
+  justify-content: flex-start;
+  flex-wrap: nowrap; /* don't wrap to next line */
+}
+
+.project-row {
+  display: flex;
+  align-items: flex-start;
+  max-width: 320px; /* narrower so two fit side-by-side nicely */
+  margin-bottom: 0; /* remove vertical margin so rows align horizontally */
+  gap: 20px;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+/* --- Glass Panel --- */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.1);          /* lighter white tint */
+  backdrop-filter: blur(15px);                    /* stronger blur */
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.25);   /* softer white border */
+  border-radius: 16px;
+  padding: 2rem 3rem;                             /* a bit more padding for inside */
+  max-width: 900px;
+  width: 100%;
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.1),               /* subtle shadow */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);     /* subtle inner highlight */
+  color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0) 70%);
+  border-radius: 16px;
+  mix-blend-mode: screen;
+  z-index: 1;
 }

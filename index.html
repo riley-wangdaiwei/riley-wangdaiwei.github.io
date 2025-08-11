@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet"
+  />
 
-    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 
-    <title>rw-portfolio</title>
+  <title>rw-portfolio</title>
+
+  <style>
+    /* Canvas fixed at top-left corner, small size */
+    canvas {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 300px !important;
+      height: 300px !important;
+      z-index: 0;
+      pointer-events: none;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      background: transparent;
+    }
+
+    /* Glass panel content above canvas */
+    .glass-panel {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body>
+  <div class="glass-panel">
     <header>
-        <img src="images/hero-headshot.jpg" alt="My headshot" class="hero-image">
-        <p><span class="highlight-link">RILEY&nbsp;WANG</span></p>  <div class="vertical-divider"></div>
-        <p>
-    I observe how people imagine the future of communication, governance, and cooperation, especially in Web3. I hope to help by telling stories or <a href="projects.html" class="highlight-link">building connections</a>, using my background in economics, mathematics, and anthropology.
-  </p>
-
+      <img src="images/hero-headshot.jpg" alt="My headshot" class="hero-image" />
+      <p><span class="highlight-link">RILEY&nbsp;WANG</span></p>
+      <div class="vertical-divider"></div>
+      <p>
+        I observe how people imagine the future of communication, governance, and cooperation,
+        especially in Web3. I hope to help by telling stories or
+        <a href="projects.html" class="highlight-link">building connections</a>,
+        using my background in economics, mathematics, and anthropology.
+      </p>
     </header>
 
     <nav class="nav-tabs">
-        <a href="https://drive.google.com/file/d/1FJXhdLn-Mhe-1guWn8cA6O6kkJt96TLd/view?usp=sharing" >CV</a>
-        <a href="projects.html">Projects</a>
-        <a href="writing.html" class="highlight-link">Writing</a>
-        <a href="arts.html">Arts</a>
+      <a href="https://drive.google.com/file/d/1FJXhdLn-Mhe-1guWn8cA6O6kkJt96TLd/view?usp=sharing">CV</a>
+      <a href="projects.html">Projects</a>
+      <a href="writing.html" class="highlight-link">Writing</a>
+      <a href="arts.html">Arts</a>
     </nav>
 
     <section class="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:daiwei.wang@emory.edu">daiwei.wang@emory.edu</a></p>
-        <p>GitHub: <a href="https://github.com/riley-wangdaiwei" target="_blank">github.com/riley-wangdaiwei</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/riley-wang-a06640298" target="_blank">linkedin.com/in/riley-wang-a06640298</a></p>
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:daiwei.wang@emory.edu">daiwei.wang@emory.edu</a></p>
+      <p>GitHub: <a href="https://github.com/riley-wangdaiwei" target="_blank">github.com/riley-wangdaiwei</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/riley-wang-a06640298" target="_blank">linkedin.com/in/riley-wang-a06640298</a></p>
     </section>
-</body>
+  </div>
 
+  <!-- p5.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+
+  <!-- Your banner animation -->
+  <script src="banner.js"></script>
+</body>
 </html>

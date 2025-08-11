@@ -3,28 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
-  
+
   <link rel="stylesheet" href="styles.css" />
-  
+
   <title>Projects - Riley Wang</title>
+
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      height: 100vh;
+      font-family: 'Chiron Hei HK', sans-serif;
+      background: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Canvas behind, fixed right, full height square */
+    canvas {
+      position: fixed !important;
+      top: 0;
+      right: 0;
+      height: 100vh !important;
+      width: 100vh !important;  /* keep square */
+      max-width: 100vw;
+      max-height: 100vw;
+      z-index: 0;
+      pointer-events: none;
+      border-radius: 16px 0 0 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      background: transparent;
+    }
+
+    /* Glass panel on top, full height, margin so it doesn't cover the canvas */
+    .glass-panel {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      margin-right: 100vh; /* leave space for canvas on right */
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px 0 0 16px;
+      padding: 2rem;
+      color: black;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    /* Other styles for icons and links */
+    .put-up-icon {
+      margin-top: 12px;
+      width: 24px;
+      height: 24px;
+      fill: black;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .put-up-link {
+      display: inline-block;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <p><span class="highlight-link">PROJECTS</span></p>
-    <div class="vertical-divider"></div>
-    <p>
-      I’m experimenting with 
-      <a href="https://ladyuper.wixsite.com/ladyup" class="highlight-link" target="_blank" rel="noopener noreferrer">LAdY UP</a>, 
-      an online women-in-sports magazine exploring how tokenization and lightweight governance can reshape collaborative publishing.
-    </p>
-  </header>
 
-  <nav class="nav-tabs">
-    <a href="index.html">HOME</a>
-  </nav>
+  <!-- Canvas behind -->
+  <canvas></canvas>
+
+  <!-- Glass panel on top -->
+  <div class="glass-panel">
+    <div class="container">
+      <header>
+        <p><span class="highlight-link">PROJECTS</span></p>
+        <div class="vertical-divider"></div>
+      </header>
+
+      <nav class="nav-tabs">
+        <a href="#lady-up">LU</a>
+        <a href="#onbogo">Onbogo</a>
+      </nav>
+
+      <div class="projects-horizontal">
+        <div class="project-row" style="flex-direction: column; max-width: 320px; gap: 12px;">
+          <div
+            class="date-banner"
+            style="
+              width: 100%;
+              padding: 0 0 30px 0;
+              margin-bottom: 48px;
+              display: flex;
+              justify-content: flex-start;
+              align-items: flex-start;
+              border-top: 1px solid #000;
+              border-bottom: 1px solid #000;
+            "
+          >
+            <p
+              class="date-number"
+              style="margin: 0; font-weight: 900; font-size: 3.5rem; line-height: 1; color: black;"
+            >
+              21
+            </p>
+            <p
+              class="date-text"
+              style="margin: 0 0 0 8px; font-weight: 400; font-size: 1rem; color: #999; font-family: Arial, sans-serif; text-transform: capitalize;"
+            >
+              initiated
+            </p>
+          </div>
+          <section
+            id="lady-up"
+            class="project-desc"
+            style="padding-left: 1.2em; position: relative;"
+          >
+            <p style="margin: 0; line-height: 1.4;">
+              <span style="color: black; font-weight: 900; font-size: 1rem; line-height: 1;">&#9679;&nbsp;</span>
+              I’m experimenting with
+              <a
+                href="https://ladyuper.wixsite.com/ladyup"
+                class="highlight-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="text-decoration: none;"
+                >LU</a
+              >,
+              an online women-in-sports magazine exploring how tokenization and lightweight governance can reshape collaborative publishing.
+            </p>
+            <a href="https://ladyuper.wixsite.com/ladyup" target="_blank" rel="noopener noreferrer" class="put-up-link" aria-label="Go to LU project">
+              <svg class="put-up-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" >
+                <rect x="2" y="2" width="20" height="20" fill="none" stroke="black" stroke-width="2" rx="2" ry="2"/>
+                <path d="M8 14l4-4 4 4" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="12" y1="10" x2="12" y2="18" stroke="black" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </section>
+        </div>
+
+        <div class="project-row" style="flex-direction: column; max-width: 320px; gap: 12px;">
+          <div
+            class="date-banner"
+            style="
+              width: 100%;
+              padding: 0 0 30px 0;
+              margin-bottom: 48px;
+              display: flex;
+              justify-content: flex-start;
+              align-items: flex-start;
+              border-top: 1px solid #000;
+              border-bottom: 1px solid #000;
+            "
+          >
+            <p
+              class="date-number"
+              style="margin: 0; font-weight: 900; font-size: 3.5rem; line-height: 1; color: black;"
+            >
+              25
+            </p>
+            <p
+              class="date-text"
+              style="margin: 0 0 0 8px; font-weight: 400; font-size: 1rem; color: #999; font-family: Arial, sans-serif; text-transform: capitalize;"
+            >
+              Summer
+            </p>
+          </div>
+          <section
+            id="onbogo"
+            class="project-desc"
+            style="padding-left: 1.2em; position: relative;"
+          >
+            <p style="margin: 0; line-height: 1.4;">
+              <span style="color: black; font-weight: 900; font-size: 1rem; line-height: 1;">&#9679;&nbsp;</span>
+              I built a draft version of
+              <a
+                href="https://github.com/riley-wangdaiwei/onbogo.git"
+                class="highlight-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="text-decoration: none;"
+                >Onbogo</a
+              >,
+              a DeFi app prototype where users learn through real blockchain trade analysis, vote on strategies, and earn rewards.
+            </p>
+            <a href="https://github.com/riley-wangdaiwei/onbogo.git" target="_blank" rel="noopener noreferrer" class="put-up-link" aria-label="Go to Onbogo project">
+              <svg class="put-up-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" >
+                <rect x="2" y="2" width="20" height="20" fill="none" stroke="black" stroke-width="2" rx="2" ry="2"/>
+                <path d="M8 14l4-4 4 4" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="12" y1="10" x2="12" y2="18" stroke="black" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </section>
+        </div>
+      </div>
+
+      <nav class="nav-tabs" style="margin-top: 48px;">
+        <a href="index.html">HOME</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Load p5.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+  <!-- Load your external banner.js script -->
+  <script src="banner.js"></script>
 </body>
 </html>
+
+
+
